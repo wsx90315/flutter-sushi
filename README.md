@@ -1,6 +1,7 @@
 # firstApp
 
 A new Flutter project.
+[練習的案例來源](https://youtu.be/XBKzpTz65Io)
 
 ## Getting Started
 
