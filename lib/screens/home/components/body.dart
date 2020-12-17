@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firstApp/models/Produce.dart';
 import 'ItemCard.dart';
 import 'categorries.dart';
+import '../../details/detailsScreen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -43,8 +44,17 @@ class Body extends StatelessWidget {
                 crossAxisSpacing: kDefaultPaddin, // 横轴方向子元素的间距
                 childAspectRatio: 0.75, // 子元素在横轴长度和主轴长度的比例
               ),
-              itemBuilder: (context, index) =>
-                  ItemCard(product: products[index]),
+              itemBuilder: (context, index) => ItemCard(
+                product: products[index],
+                press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(
+                      product: products[index],
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
